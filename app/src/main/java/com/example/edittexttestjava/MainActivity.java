@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
@@ -54,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
     private void updateUi(String s) {
 
         String str = s.replace(" ", "");
+        if(TextUtils.isEmpty(str)) str = "0";
+
         int i = Integer.parseInt(str);
         String str1 = DecimalFormatter.getDecimalFormat(i);
 
